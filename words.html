@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So'zlar - Language Learning App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-book-open"></i> So'zlarni o'rganish</h1>
+                <div class="stats">
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span id="learned-words">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="streak">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="words-container">
+            <div class="learning-modes">
+                <div class="mode-card active" data-mode="flashcards">
+                    <i class="fas fa-cards"></i>
+                    <span>Flashcards</span>
+                </div>
+                <div class="mode-card" data-mode="practice">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span>Mashqlar</span>
+                </div>
+                <div class="mode-card" data-mode="listening">
+                    <i class="fas fa-headphones"></i>
+                    <span>Tinglab o'rganish</span>
+                </div>
+            </div>
+
+            <div class="flashcards-section">
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h2 id="word-text">Loading...</h2>
+                            <p class="category" id="word-category"></p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h2 id="translation-text"></h2>
+                            <p class="example" id="example-text"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard-controls">
+                    <button class="control-btn" id="prev-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="control-btn" id="flip-btn">
+                        <i class="fas fa-sync"></i>
+                    </button>
+                    <button class="control-btn" id="next-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="words-progress"></div>
+                    </div>
+                    <span id="progress-text">0/0</span>
+                </div>
+            </div>
+
+            <div class="practice-section" style="display: none;">
+                <div class="practice-card">
+                    <h2 id="practice-word"></h2>
+                    <div class="options" id="practice-options">
+                        <!-- Variantlar JavaScript orqali qo'shiladi -->
+                    </div>
+                    <button class="check-btn" id="check-answer">Tekshirish</button>
+                </div>
+            </div>
+
+            <div class="listening-section" style="display: none;">
+                <div class="listening-card">
+                    <button class="speak-btn" id="speak-word">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <div class="input-group">
+                        <input type="text" id="word-input" placeholder="So'zni yozing...">
+                        <button class="check-btn" id="check-spelling">Tekshirish</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Bosh sahifa</span>
+            </a>
+            <a href="dictionary.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>Lug'atlar</span>
+            </a>
+            <a href="stats.html" class="nav-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Statistika</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="words.js"></script>
+</body>
+</html> 

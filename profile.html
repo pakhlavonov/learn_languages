@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Language Learning App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-user"></i> Profil</h1>
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span id="total-score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <span id="streak">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="profile-container">
+            <div class="profile-header">
+                <div class="profile-image">
+                    <img src="default-avatar.png" alt="Profile" id="profile-img">
+                    <button class="change-photo-btn">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h2 id="user-name">Foydalanuvchi</h2>
+                    <p id="user-level">Boshlang'ich</p>
+                    <div class="level-progress">
+                        <div class="progress-bar">
+                            <div class="progress" id="level-progress"></div>
+                        </div>
+                        <span id="level-percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <h3>Statistika</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="words-learned">0</span>
+                            <span class="stat-label">O'rganilgan so'zlar</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="study-time">0</span>
+                            <span class="stat-label">O'rganish vaqti</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="correct-answers">0</span>
+                            <span class="stat-label">To'g'ri javoblar</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <div class="stat-info">
+                            <span class="stat-value" id="streak-days">0</span>
+                            <span class="stat-label">Kunlik seriya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h3>Yutuqlar</h3>
+                <div class="achievements-grid" id="achievements-container">
+                    <!-- Yutuqlar JavaScript orqali qo'shiladi -->
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Sozlamalar</h3>
+                <div class="settings-list">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-bell"></i>
+                            <span>Bildirishnomalar</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="notifications-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-volume-up"></i>
+                            <span>Tovush</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="sound-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-moon"></i>
+                            <span>Qorong'i rejim</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="dark-mode-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-language"></i>
+                            <span>Til</span>
+                        </div>
+                        <select id="language-select">
+                            <option value="uz">O'zbek</option>
+                            <option value="en">English</option>
+                            <option value="ru">Русский</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="account-section">
+                <h3>Hisob</h3>
+                <div class="account-actions">
+                    <button class="account-btn" id="edit-profile-btn">
+                        <i class="fas fa-user-edit"></i>
+                        Profilni tahrirlash
+                    </button>
+                    <button class="account-btn" id="change-password-btn">
+                        <i class="fas fa-key"></i>
+                        Parolni o'zgartirish
+                    </button>
+                    <button class="account-btn danger" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Chiqish
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Bosh sahifa</span>
+            </a>
+            <a href="words.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>So'zlar</span>
+            </a>
+            <a href="practice.html" class="nav-item">
+                <i class="fas fa-pencil-alt"></i>
+                <span>Mashqlar</span>
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Modallar -->
+    <div class="modal" id="edit-profile-modal">
+        <div class="modal-content">
+            <h2>Profilni tahrirlash</h2>
+            <form id="edit-profile-form">
+                <div class="form-group">
+                    <label for="edit-name">Ism</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email">Email</label>
+                    <input type="email" id="edit-email" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Bekor qilish</button>
+                    <button type="submit" class="save-btn">Saqlash</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="change-password-modal">
+        <div class="modal-content">
+            <h2>Parolni o'zgartirish</h2>
+            <form id="change-password-form">
+                <div class="form-group">
+                    <label for="current-password">Joriy parol</label>
+                    <input type="password" id="current-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Yangi parol</label>
+                    <input type="password" id="new-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Yangi parolni tasdiqlang</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Bekor qilish</button>
+                    <button type="submit" class="save-btn">O'zgartirish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html> 

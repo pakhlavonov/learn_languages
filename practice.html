@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashqlar - Language Learning App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-pencil-alt"></i> Mashqlar</h1>
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <span id="streak">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="timer">30</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="practice-container">
+            <div class="categories">
+                <h2>Kategoriyalar</h2>
+                <div class="category-list">
+                    <div class="category-card" onclick="selectCategory('greetings')">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Salomlashish</h3>
+                    </div>
+                    <div class="category-card" onclick="selectCategory('numbers')">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Sonlar</h3>
+                    </div>
+                    <div class="category-card" onclick="selectCategory('colors')">
+                        <i class="fas fa-palette"></i>
+                        <h3>Ranglar</h3>
+                    </div>
+                    <div class="category-card" onclick="selectCategory('family')">
+                        <i class="fas fa-users"></i>
+                        <h3>Oila</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="practice-types">
+                <div class="type-card active" data-type="translation">
+                    <i class="fas fa-language"></i>
+                    <h3>Tarjima</h3>
+                    <p>So'zlarni tarjima qiling</p>
+                </div>
+                <div class="type-card" data-type="listening">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Tinglab yozish</h3>
+                    <p>Tinglaganingizni yozing</p>
+                </div>
+                <div class="type-card" data-type="matching">
+                    <i class="fas fa-link"></i>
+                    <h3>Moslashtirish</h3>
+                    <p>So'zlarni moslashtiring</p>
+                </div>
+                <div class="type-card" data-type="fillInTheBlank">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>Bo'sh joyni to'ldirish</h3>
+                    <p>Gapdagi bo'sh joyni to'ldiring</p>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-header">
+                    <h2 class="question-type">Tarjima</h2>
+                    <div class="question-controls">
+                        <button id="hint-btn" class="control-btn">
+                            <i class="fas fa-lightbulb"></i>
+                            Maslahat
+                        </button>
+                        <button id="fifty-fifty-btn" class="control-btn" onclick="useFiftyFifty()">
+                            <i class="fas fa-percentage"></i>
+                            50:50
+                        </button>
+                        <button id="joker-btn" class="control-btn" onclick="useJoker()">
+                            <i class="fas fa-magic"></i>
+                            Joker
+                        </button>
+                        <button id="next-btn" class="control-btn">
+                            <i class="fas fa-forward"></i>
+                            Keyingi
+                        </button>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <!-- Savollar shu yerga dinamik ravishda qo'shiladi -->
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-bar" class="progress"></div>
+                    </div>
+                    <span id="progress-text">1/10</span>
+                </div>
+            </div>
+
+            <div class="results-modal" style="display: none;">
+                <div class="modal-content">
+                    <h2>Natijalar</h2>
+                    <div class="results-stats">
+                        <div class="stat">
+                            <i class="fas fa-check-circle"></i>
+                            <span>To'g'ri javoblar: <span id="correct-count">0</span></span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Noto'g'ri javoblar: <span id="incorrect-count">0</span></span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span>Umumiy ball: <span id="total-score">0</span></span>
+                        </div>
+                    </div>
+                    <div class="results-actions">
+                        <button id="restart-btn" class="primary-btn">Qaytadan boshlash</button>
+                        <button id="stats-btn" class="secondary-btn" onclick="showStatistics()">
+                            <i class="fas fa-chart-bar"></i>
+                            Statistika
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Bosh sahifa</span>
+            </a>
+            <a href="words.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>So'zlar</span>
+            </a>
+            <a href="practice.html" class="nav-item active">
+                <i class="fas fa-pencil-alt"></i>
+                <span>Mashqlar</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </a>
+        </nav>
+    </div>
+    <script src="practice.js"></script>
+</body>
+</html> 

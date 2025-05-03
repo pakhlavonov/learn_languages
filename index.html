@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-language"></i> Language Learning App</h1>
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <span id="streak">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="home-container">
+            <div class="learning-sections">
+                <div class="section-card" onclick="location.href='words.html'">
+                    <i class="fas fa-book"></i>
+                    <h2>So'zlar</h2>
+                    <p>Yangi so'zlarni o'rganish</p>
+                    <div class="progress-mini">
+                        <div class="progress" style="width: 65%"></div>
+                    </div>
+                </div>
+
+                <div class="section-card" onclick="location.href='quiz.html'">
+                    <i class="fas fa-question-circle"></i>
+                    <h2>Test</h2>
+                    <p>Bilimingizni tekshirish</p>
+                    <div class="progress-mini">
+                        <div class="progress" style="width: 45%"></div>
+                    </div>
+                </div>
+
+                <div class="section-card" onclick="location.href='flashcards.html'">
+                    <i class="fas fa-cards"></i>
+                    <h2>Flashcards</h2>
+                    <p>So'zlarni yodlash</p>
+                    <div class="progress-mini">
+                        <div class="progress" style="width: 30%"></div>
+                    </div>
+                </div>
+
+                <div class="section-card" onclick="location.href='practice.html'">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h2>Mashqlar</h2>
+                    <p>Amaliy mashqlar</p>
+                    <div class="progress-mini">
+                        <div class="progress" style="width: 20%"></div>
+                    </div>
+                </div>
+
+                <div class="section-card" onclick="location.href='dictionary.html'">
+                    <i class="fas fa-book"></i>
+                    <h2>Lug'atlar</h2>
+                    <p>So'zlarni kategoriyalar bo'yicha o'rganish</p>
+                    <div class="progress-mini">
+                        <div class="progress" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="daily-goal">
+                <h3>Kunlik maqsad</h3>
+                <div class="goal-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                    <span>75%</span>
+                </div>
+                <p>Kunlik 20 so'z o'rganish</p>
+            </div>
+
+            <div class="quick-actions">
+                <button class="action-btn" onclick="location.href='words.html'">
+                    <i class="fas fa-plus"></i>
+                    Yangi so'z qo'shish
+                </button>
+                <button class="action-btn" onclick="location.href='quiz.html'">
+                    <i class="fas fa-play"></i>
+                    Test boshlash
+                </button>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Bosh sahifa</span>
+            </a>
+            <a href="words.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>So'zlar</span>
+            </a>
+            <a href="stats.html" class="nav-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Statistika</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </a>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
